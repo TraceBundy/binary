@@ -629,7 +629,7 @@ func (dec *Decoder) ReadString() (out string, err error) {
 }
 
 func (dec *Decoder) ReadRustString() (out string, err error) {
-	length, err := dec.ReadUint64(binary.LittleEndian)
+	length, err := dec.ReadUint32(binary.LittleEndian)
 	if err != nil {
 		return "", err
 	}
