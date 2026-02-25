@@ -249,7 +249,7 @@ func (dec *Decoder) ReadByteSlice() (out []byte, err error) {
 func (dec *Decoder) ReadLength() (length int, err error) {
 	switch dec.encoding {
 	case EncodingBin:
-		val, err := dec.ReadUvarint64()
+		val, err := dec.ReadUint32(LE)
 		if err != nil {
 			return 0, err
 		}
